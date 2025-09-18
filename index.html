@@ -14,13 +14,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Phone redirect -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth <= 480) {
-        window.location.replace('/index-mobile.html');
+   <script>
+     function tryRedirect() {
+      const w = window.innerWidth;
+      if (w > 0 && w <= 480) {
+        location.replace('/tic-website/index-mobile.html');
+      } else if (w === 0) {
+        // first paint not done – retry once
+        requestAnimationFrame(tryRedirect);
       }
-    });
-  </script>
+     }
+     // run after DOM + first paint
+     if (document.readyState === 'loading') {
+     document.addEventListener('DOMContentLoaded', tryRedirect);
+     } else {
+        requestAnimationFrame(tryRedirect);
+     }
+   </script>
 </head>
 
 <body>
