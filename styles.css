@@ -229,7 +229,7 @@ tr:nth-child(even){background:rgba(0,0,0,.03)}
   flex:none;
   width:180px;
   height:180px;
-  border-radius:50%;
+  border-radius:8%;
   border:4px solid var(--accent);
   overflow:hidden;
   box-shadow:0 0 12px rgba(212,175,55,.45);
@@ -252,21 +252,37 @@ tr:nth-child(even){background:rgba(0,0,0,.03)}
   .pastor-circle{margin:0 auto}
 }
 
-/* ----- framed YouTube button card ----- */
-.btn-frame{
-  text-align:center;
-  background:var(--white);
-  border:2px solid var(--accent);
-  border-radius:12px;
-  padding:2rem 1.5rem 1.75rem;
-  transition:transform .3s, box-shadow .3s;
+/* ===== 8. BUTTONS – DESKTOP GOLD + FRAMED CARD ===== */
+.gold-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s, background 0.2s, color 0.2s;
 }
-.btn-frame:hover{
-  transform:translateY(-4px);
-  box-shadow:0 8px 24px rgba(212,175,55,.25);
+.gold-btn:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: scale(1.03);
 }
-.btn-frame .gold-btn{
-  margin-top:1rem;
-  padding:.75rem 1.5rem;
-  font-size:1.05rem;
+
+/* ===== NEW – framed gold card (desktop version) ===== */
+.btn-frame {
+  text-align: center;
+  background: var(--white);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+}
+.btn-frame .gold-btn {
+  margin-top: 1rem;
 }

@@ -2,37 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tokyo International Seventh-day Adventist Church</title>
 
-  <!-- Desktop-first stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Mobile-only stylesheet -->
+  <link rel="stylesheet" href="mobile.css">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (same weights) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Phone redirect -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth <= 480) {
-        window.location.replace('/index-mobile.html');
-      }
-    });
-  </script>
 </head>
 
 <body>
-  <!-- 7-column shell (desktop) -->
+  <!-- ===== MOBILE 7-COLUMN GRID (6 content + 1 Sabbath) ===== -->
   <main class="content-sixth">
-    <!-- sticky nav -->
+    <!-- Hamburger Nav -->
     <nav class="main-nav">
       <div class="titles">
         <h1>Tokyo International</h1>
         <h1>Seventh-day Adventist Church</h1>
       </div>
-
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -74,8 +67,9 @@
       <div class="card about-card">
         <h3>Our Church Pastor</h3>
 
+        <!-- Square image + verse side-by-side -->
         <div class="pastor-verse-row">
-          <div class="pastor-circle">
+          <div class="pastor-square">
             <img src="images/pastor_profile_pic.webp" alt="Pastor Guenji Imayuki">
           </div>
 
